@@ -1,4 +1,5 @@
 <?php
+
 $command = 'node scrape.js';
 
 $output = shell_exec($command);
@@ -19,4 +20,3 @@ foreach ($products as $product) {
   echo "Link: <a href='https://www.trendyol.com" . htmlspecialchars($product['link']) . "'>Product Link</a><br>";
   echo "Image: <img src='" . htmlspecialchars($product['image']) . "' alt='Product Image'><br><br>";
 }
-?>

@@ -5,10 +5,8 @@ const puppeteer = require('puppeteer');
   const page = await browser.newPage();
   await page.goto('https://www.trendyol.com/erkek-t-shirt-x-g2-c73', { waitUntil: 'networkidle2' });
 
-  // Wait for the products to load
   await page.waitForSelector('.p-card-chldrn-cntnr');
 
-  // Extract product details
   const products = await page.evaluate(() => {
     const items = Array.from(document.querySelectorAll('.p-card-chldrn-cntnr'));
     return items.map(item => {
@@ -25,7 +23,6 @@ const puppeteer = require('puppeteer');
     });
   });
 
-  // Output results as JSON
   console.log(JSON.stringify(products));
 
   await browser.close();

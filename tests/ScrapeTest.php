@@ -4,7 +4,7 @@ use PHPUnit\Framework\TestCase;
 
 class ScrapeTest extends TestCase
 {
-  private $command = 'node scrape.js'; // Ensure this path is correct
+  private $command = 'node scrape.js';
 
   public function testScriptExecution()
   {
@@ -16,13 +16,11 @@ class ScrapeTest extends TestCase
   {
     $output = shell_exec($this->command);
 
-    // Check if output is JSON
     $this->assertJson($output, "Output is not valid JSON.");
 
     $products = json_decode($output, true);
     $this->assertIsArray($products, "Decoded JSON is not an array.");
 
-    // Validate structure of the first product item
     if (!empty($products)) {
       $this->assertArrayHasKey('title', $products[0], "Product item does not have 'title' key.");
       $this->assertArrayHasKey('price', $products[0], "Product item does not have 'price' key.");
