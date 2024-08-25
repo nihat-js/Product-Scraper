@@ -1,0 +1,1 @@
+{"version":1,"defects":{"ScrapeTest::testScriptExecution":7,"ScrapeTest::testJsonParsing":8,"ScrapeTest::testHtmlOutput":7},"times":{"ScrapeTest::testScriptExecution":6.54,"ScrapeTest::testJsonParsing":6.935,"ScrapeTest::testHtmlOutput":6.83}}
